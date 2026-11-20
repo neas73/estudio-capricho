@@ -1,0 +1,151 @@
+/* ==========================================================================
+   hero.css — portada: título, botones, ilustración y franja de servicios
+   ========================================================================== */
+
+.hero {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: clamp(40px, 7vw, 96px) var(--gutter) clamp(40px, 6vw, 80px);
+}
+
+.hero-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-48) var(--space-xl);
+}
+
+.hero-copy {
+  flex: 1 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.hero-title {
+  font-weight: 500;
+  font-size: clamp(38px, 5.8vw, 86px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.hero-text {
+  max-width: 540px;
+  font-size: 19px;
+  color: var(--color-text-soft);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-hero {
+  min-height: 52px;
+  padding: 0 30px;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--color-ink);
+}
+
+/* Ilustración y frase */
+.hero-visual {
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-shape {
+  position: absolute;
+}
+
+.hero-shape-sun {
+  left: 4%;
+  top: 8%;
+  width: 64%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-accent);
+}
+
+.hero-shape-ring {
+  right: 2%;
+  bottom: 4%;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  border: 1.5px solid var(--color-ink);
+}
+
+.hero-shape-bar {
+  left: 46%;
+  top: 0;
+  width: 9%;
+  height: 46%;
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+}
+
+.hero-shape-dot {
+  left: 14%;
+  bottom: 12%;
+  width: 7%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-ink);
+}
+
+.hero-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--color-text-soft);
+}
+
+/* Franja de servicios */
+.hero-services {
+  margin-top: clamp(48px, 7vw, 96px);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-24);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}

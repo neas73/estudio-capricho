@@ -1,0 +1,315 @@
+/* ==========================================================================
+   trabajos.css — portfolio: filtros y tarjetas de proyectos
+   ========================================================================== */
+
+.trabajos {
+  background: var(--color-bg-alt);
+}
+
+.trabajos-inner {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.trabajos-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-28) var(--space-48);
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.trabajos-head-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  min-width: 0;
+}
+
+/* Filtros */
+.trabajos-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+.chip-filter {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border-filter);
+}
+
+.chip-filter.is-active {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border: 1px solid var(--color-ink);
+}
+
+/* Grilla de proyectos */
+.trabajos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 40px var(--space-28);
+}
+
+.work-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.work-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+.work-visual {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.work-card:hover .work-visual {
+  transform: scale(1.04);
+}
+
+.work-media .badge {
+  left: 14px;
+  bottom: 14px;
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-md);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.work-name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.work-desc {
+  font-size: 15px;
+  color: var(--color-text-soft);
+}
+
+/* Ilustraciones provisorias de cada proyecto */
+.shape {
+  position: absolute;
+}
+
+/* 1 · Branding (marrón) */
+.work-visual-1 {
+  background: var(--color-ink);
+}
+
+.work-visual-1 .shape:nth-child(1) {
+  left: 14%;
+  top: 20%;
+  width: 46%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-accent);
+}
+
+.work-visual-1 .shape:nth-child(2) {
+  left: 36%;
+  top: 34%;
+  width: 46%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  border: 1.5px solid var(--color-surface-light);
+}
+
+/* 2 · Redes sociales (celeste) */
+.work-visual-2 {
+  background: var(--color-art-sky);
+}
+
+.work-visual-2 .shape {
+  top: 14%;
+  width: 26%;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-md);
+}
+
+.work-visual-2 .shape:nth-child(1) {
+  left: 9%;
+  background: var(--color-white);
+}
+
+.work-visual-2 .shape:nth-child(2) {
+  left: 37%;
+  top: 26%;
+  background: var(--color-accent);
+}
+
+.work-visual-2 .shape:nth-child(3) {
+  left: 65%;
+  background: var(--color-ink);
+}
+
+/* 3 · Web y UX/UI (ventana de navegador) */
+.work-visual-3 {
+  background: var(--color-art-stone);
+}
+
+.work-visual-3 .shape:nth-child(1) {
+  left: 10%;
+  top: 14%;
+  width: 80%;
+  height: 72%;
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.work-visual-3 .shape:nth-child(2) {
+  left: 10%;
+  top: 14%;
+  width: 80%;
+  height: 11%;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--color-ink);
+}
+
+.work-visual-3 .shape:nth-child(3) {
+  left: 16%;
+  top: 34%;
+  width: 34%;
+  height: 12%;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+}
+
+.work-visual-3 .shape:nth-child(4) {
+  left: 16%;
+  top: 54%;
+  width: 54%;
+  height: 3%;
+  border-radius: var(--radius-sm);
+  background: var(--color-border-soft);
+}
+
+.work-visual-3 .shape:nth-child(5) {
+  left: 16%;
+  top: 62%;
+  width: 42%;
+  height: 3%;
+  border-radius: var(--radius-sm);
+  background: var(--color-border-soft);
+}
+
+/* 4 · Eventos (azul) */
+.work-visual-4 {
+  background: var(--color-accent);
+}
+
+.work-visual-4 .shape:nth-child(1) {
+  left: 20%;
+  top: 16%;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  border: 2px solid var(--color-ink);
+}
+
+.work-visual-4 .shape:nth-child(2) {
+  left: 36%;
+  top: 32%;
+  width: 28%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-ink);
+}
+
+.work-visual-4 .shape:nth-child(3) {
+  left: 70%;
+  top: 12%;
+  width: 8%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-bg);
+}
+
+/* 5 · Branding (barras) */
+.work-visual-5 {
+  background: var(--color-art-sand);
+}
+
+.work-visual-5 .shape {
+  left: 12%;
+  height: 9%;
+  border-radius: var(--radius-pill);
+}
+
+.work-visual-5 .shape:nth-child(1) {
+  top: 22%;
+  width: 60%;
+  background: var(--color-ink);
+}
+
+.work-visual-5 .shape:nth-child(2) {
+  top: 38%;
+  width: 44%;
+  background: var(--color-accent);
+}
+
+.work-visual-5 .shape:nth-child(3) {
+  top: 54%;
+  width: 70%;
+  background: var(--color-ink);
+}
+
+.work-visual-5 .shape:nth-child(4) {
+  top: 70%;
+  width: 26%;
+  background: var(--color-border-soft);
+}
+
+/* 6 · Presentaciones (diapositivas) */
+.work-visual-6 {
+  background: var(--color-line-dark);
+}
+
+.work-visual-6 .shape {
+  width: 56%;
+  aspect-ratio: 16 / 9;
+  border-radius: 6px;
+}
+
+.work-visual-6 .shape:nth-child(1) {
+  left: 10%;
+  top: 18%;
+  background: var(--color-bg);
+}
+
+.work-visual-6 .shape:nth-child(2) {
+  left: 34%;
+  top: 42%;
+  background: var(--color-accent);
+}
