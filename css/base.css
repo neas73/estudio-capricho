@@ -154,22 +154,6 @@ img {
   letter-spacing: -0.01em;
 }
 
-/* Palabras en inglés: siempre en cursiva */
-.en {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* En etiquetas en mayúsculas la cursiva serif se ve fina: se refuerza un poco */
-.eyebrow .en,
-.hero-services .en,
-.work-meta .en {
-  font-size: 1.15em;
-  font-weight: 500;
-  line-height: 1;
-}
-
 /* Marcador azul bajo la palabra destacada */
 .highlight {
   background: linear-gradient(

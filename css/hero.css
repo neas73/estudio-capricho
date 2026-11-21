@@ -89,6 +89,7 @@
 
 .hero-shape {
   position: absolute;
+  will-change: transform; /* js/hero-art.js mueve las formas */
 }
 
 .hero-shape-sun {

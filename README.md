@@ -22,7 +22,7 @@ Las fuentes (Raleway y Playfair Display) se cargan desde Google Fonts, por lo qu
 | Ruta | Contenido |
 | --- | --- |
 | `index.html` | Marcado semántico de toda la página, sin estilos ni scripts inline. |
-| `css/base.css` | Variables (colores, tipografías, espaciado, radios), reset y utilidades compartidas (cursiva para palabras en inglés, botones, etiquetas). |
+| `css/base.css` | Variables (colores, tipografías, espaciado, radios), reset y utilidades compartidas (botones, etiquetas, marcador azul). |
 | `css/header.css` | Menú flotante: logo, navegación e indicador de sección activa. |
 | `css/hero.css` | Portada: título, botones, ilustración y franja de servicios. |
 | `css/pilares.css` | Sección de los pilares. |
@@ -31,6 +31,7 @@ Las fuentes (Raleway y Playfair Display) se cargan desde Google Fonts, por lo qu
 | `css/contacto.css` | Áreas, botón de WhatsApp y datos de contacto. |
 | `css/footer.css` | Pie de página. |
 | `js/nav.js` | Marca la sección activa en el menú y mantiene el menú flotante. |
+| `js/hero-art.js` | Anima los círculos de la portada: se mueven con el mouse y con el scroll (se desactiva si la persona pidió reducir el movimiento). |
 | `js/filtro-portfolio.js` | Filtra las tarjetas del portfolio por categoría (clic otra vez en la categoría activa quita el filtro). |
 | `js/contacto-whatsapp.js` | Actualiza el enlace de WhatsApp según el área elegida. |
 | `assets/img/` | Logo en versión marrón (fondos claros) y versión clara (fondo oscuro). |
@@ -41,7 +42,6 @@ Las fuentes (Raleway y Playfair Display) se cargan desde Google Fonts, por lo qu
 - **Número de WhatsApp:** atributo `data-phone` del enlace `#wa-link` en `index.html`, y el `href` inicial del mismo enlace.
 - **Textos provisorios:** están entre corchetes en `index.html` (nombres y descripciones de los proyectos).
 - **Nuevo proyecto en el portfolio:** duplicar un `<article class="work-card">` y asignar un `data-category` existente.
-- **Palabras en inglés:** envolverlas en `<i class="en" lang="en">…</i>` para que salgan en cursiva.
 - **Foto de cada integrante:** reemplazar el bloque `.team-portrait` por una imagen con `object-fit: cover`.
 
 ## Publicación
