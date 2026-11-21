@@ -52,11 +52,24 @@
   gap: var(--space-28);
 }
 
+/* En pantallas anchas el panel baja un poco para que "Contacto" sea lo primero que se lee */
+@media (min-width: 1000px) {
+  .contacto-panel {
+    padding-top: 48px;
+  }
+}
+
 /* Áreas */
 .contacto-needs {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
+}
+
+.contacto-needs-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-on-dark-muted);
 }
 
 .contacto-needs-list {
@@ -95,19 +108,6 @@
   color: var(--color-ink);
   font-size: 18px;
   font-weight: 700;
-}
-
-.contacto-note {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--color-on-dark-muted);
-}
-
-.contacto-message {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 16px;
-  color: var(--color-surface-light);
 }
 
 /* Datos de contacto */

@@ -10,6 +10,7 @@
   /* Fondos */
   --color-bg: #f6f3f0;
   --color-bg-alt: #e6eef4;
+  --color-bg-glass: rgba(246, 243, 240, 0.92);
   --color-white: #ffffff;
   --color-surface-light: #f6f1ec;
 
@@ -61,6 +62,8 @@
 /* Reset mínimo */
 html {
   scroll-behavior: smooth;
+  /* Deja libre el alto del menú flotante al saltar a una sección */
+  scroll-padding-top: var(--header-height, 72px);
 }
 
 body {
@@ -149,6 +152,22 @@ img {
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.01em;
+}
+
+/* Palabras en inglés: siempre en cursiva */
+.en {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* En etiquetas en mayúsculas la cursiva serif se ve fina: se refuerza un poco */
+.eyebrow .en,
+.hero-services .en,
+.work-meta .en {
+  font-size: 1.15em;
+  font-weight: 500;
+  line-height: 1;
 }
 
 /* Marcador azul bajo la palabra destacada */
