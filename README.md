@@ -38,6 +38,7 @@ Las fuentes (Raleway y Playfair Display) se cargan desde Google Fonts, por lo qu
 | `js/lightbox-trabajos.js` | Abre cada trabajo en una ventana emergente, con navegación anterior/siguiente. |
 | `js/contacto-whatsapp.js` | Actualiza el enlace de WhatsApp según el área elegida. |
 | `assets/img/` | Logos (marrón para fondos claros, claro para fondo oscuro), fotos provisorias y favicon. |
+| `googlede3e6abc9d643b8d.html` | Archivo de verificación de Google Search Console. No borrar: si se elimina, Google pierde la verificación. |
 | `robots.txt`, `sitemap.xml` | Indicaciones para buscadores (Google). Contienen la dirección de la web. |
 | `site.webmanifest` | Nombre e íconos para cuando alguien guarda la web en su celular. |
 | `favicon.ico` | Ícono de la pestaña del navegador (blanco, sin fondo). Los PNG equivalentes están en `assets/img/favicon-*.png`. |
@@ -46,7 +47,7 @@ Las fuentes (Raleway y Playfair Display) se cargan desde Google Fonts, por lo qu
 
 - **Colores y tipografías:** `css/base.css`, bloque `:root`.
 - **Número de WhatsApp:** atributo `data-phone` del enlace `#wa-link` en `index.html`, y el `href` inicial del mismo enlace.
-- **Fotos de proyectos:** reemplazá `assets/img/proyecto-1.png` a `proyecto-6.png` por las reales, con el mismo nombre. Formato recomendado: horizontal 4:3 (por ejemplo 1200 × 900 px).
+- **Fotos de proyectos:** reemplazá `assets/img/proyecto-1.jpg` a `proyecto-6.jpg` con el mismo nombre y formato JPG. Formato recomendado: horizontal 4:3 (por ejemplo 1200 × 900 px). Los nombres y descripciones de cada proyecto se editan en `index.html`.
 - **Fotos del equipo:** reemplazá `assets/img/equipo-agustina.jpg` y `equipo-estefania.jpg` (mantené el nombre y el formato JPG). Formato recomendado: vertical 3:4 (por ejemplo 900 × 1200 px).
 - **Textos provisorios:** están entre corchetes en `index.html` (nombres y descripciones de los proyectos).
 - **Nuevo proyecto en el portfolio:** duplicar un `<article class="work-card">` y asignar un `data-category` existente.
