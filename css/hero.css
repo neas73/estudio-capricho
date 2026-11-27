@@ -1,0 +1,238 @@
+/* ==========================================================================
+   hero.css — portada: título, botones, ilustración y franja de servicios
+   ========================================================================== */
+
+.hero {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: clamp(40px, 7vw, 96px) var(--gutter) clamp(40px, 6vw, 80px);
+}
+
+.hero-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-48) var(--space-xl);
+}
+
+.hero-copy {
+  flex: 1 1 480px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hero-eyebrow-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.hero-title {
+  font-weight: 500;
+  font-size: clamp(38px, 5.8vw, 86px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+.hero-text {
+  max-width: 540px;
+  font-size: 19px;
+  color: var(--color-text-soft);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn-hero {
+  min-height: 52px;
+  padding: 0 30px;
+}
+
+.btn-primary {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--color-ink);
+}
+
+/* Al pasar el cursor, los botones se tiñen de celeste para indicar que se pueden tocar */
+@media (hover: hover) {
+  .btn-primary:hover {
+    background: var(--color-accent);
+    color: var(--color-ink);
+  }
+
+  .btn-outline:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}
+
+/* Ilustración y frase */
+.hero-visual {
+  flex: 1 1 300px;
+  min-width: 0;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.hero-art {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.hero-shape {
+  position: absolute;
+  will-change: transform; /* js/hero-art.js mueve las formas */
+}
+
+.hero-shape-sun {
+  left: 4%;
+  top: 8%;
+  width: 64%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-accent);
+}
+
+.hero-shape-ring {
+  right: 2%;
+  bottom: 4%;
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  border: 1.5px solid var(--color-ink);
+}
+
+.hero-shape-bar {
+  left: 46%;
+  top: 0;
+  width: 9%;
+  height: 46%;
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+}
+
+.hero-shape-dot {
+  left: 14%;
+  bottom: 12%;
+  width: 7%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-round);
+  background: var(--color-ink);
+}
+
+.hero-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--color-text-soft);
+}
+
+/* Franja de servicios */
+.hero-services {
+  margin-top: clamp(40px, 6vw, 80px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+/* Salto de línea entre servicios: solo en celular */
+.hero-services .services-break {
+  display: none;
+}
+
+/* Punto separador entre servicios */
+.hero-services li:not(:last-child)::after {
+  content: '·';
+  margin: 0 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* Celular: portada más corta y ilustración chica */
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .hero-grid {
+    gap: var(--space-lg);
+  }
+
+  .hero-copy {
+    gap: var(--space-20);
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .btn-hero {
+    min-height: 48px;
+    padding: 0 24px;
+  }
+
+  .hero-visual {
+    flex: none;
+    width: 52%;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .hero-quote {
+    display: none;
+  }
+
+  .hero-services {
+    margin-top: var(--space-28);
+    gap: 8px 0;
+    font-size: 11px;
+  }
+
+  .hero-services li:not(:last-child)::after {
+    margin: 0 9px;
+  }
+
+  /* Dos renglones parejos (3 + 3) y sin punto al final del primero */
+  .hero-services li:nth-child(3)::after {
+    display: none;
+  }
+
+  .hero-services .services-break {
+    display: block;
+    flex-basis: 100%;
+    height: 0;
+    margin-top: -8px;
+  }
+
+  .hero-services .services-break::after {
+    display: none;
+  }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://neas73.github.io/estudio-capricho/sitemap.xml

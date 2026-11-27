@@ -1,0 +1,301 @@
+/* ==========================================================================
+   trabajos.css — portfolio: filtros, carrusel y tarjetas de proyectos
+   ========================================================================== */
+
+.trabajos {
+  background: var(--color-bg-alt);
+}
+
+.trabajos-inner {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.trabajos-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-28) var(--space-48);
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.trabajos-head-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+  min-width: 0;
+}
+
+/* Filtros en chips (escritorio) */
+.trabajos-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+.chip-filter {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border-filter);
+}
+
+.chip-filter.is-active {
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border: 1px solid var(--color-ink);
+}
+
+@media (hover: hover) {
+  .chip-filter:not(.is-active):hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .trabajos-select:hover {
+    border-color: var(--color-accent);
+    background-color: rgba(132, 173, 201, 0.18);
+  }
+}
+
+/* Filtro desplegable (celular) */
+.trabajos-select {
+  display: none;
+  min-height: 44px;
+  padding: 0 44px 0 18px;
+  border: 1px solid var(--color-border-filter);
+  border-radius: var(--radius-pill);
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%2342261b' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 1.5l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 18px center;
+  color: var(--color-ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Carrusel */
+.carousel-track {
+  display: flex;
+  gap: var(--space-28);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 6px;
+}
+
+.carousel-controls {
+  margin-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.carousel-progress {
+  position: relative;
+  flex: 1;
+  height: 2px;
+  background: var(--color-border-soft);
+}
+
+.carousel-progress-thumb {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: var(--thumb-left, 0%);
+  width: var(--thumb-width, 100%);
+  background: var(--color-ink);
+  transition: left 0.15s linear;
+}
+
+.carousel-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-round);
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, opacity 0.2s;
+}
+
+.carousel-btn:hover:not(:disabled) {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Tarjetas: 3 visibles en escritorio, 2 en tablet */
+.work-card {
+  flex: 0 0 calc((100% - 2 * var(--space-28)) / 3);
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  scroll-snap-align: start;
+}
+
+.work-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
+/* Ícono que indica que la imagen se puede ampliar */
+.work-media::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-round);
+  background: var(--color-bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%2342261b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'/%3E%3C/svg%3E") center / 18px no-repeat;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.work-media:hover::after,
+.work-media:focus-visible::after {
+  opacity: 1;
+  transform: none;
+}
+
+@media (hover: none) {
+  .work-media::after {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.work-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.work-media:hover .work-img {
+  transform: scale(1.04);
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.work-meta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+
+.work-name {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.work-desc {
+  font-size: 15px;
+  color: var(--color-text-soft);
+}
+
+@media (max-width: 999px) {
+  .work-card {
+    flex-basis: calc((100% - var(--space-28)) / 2);
+  }
+}
+
+/* Celular: filtro desplegable, tarjetas chicas y borde a borde */
+@media (max-width: 640px) {
+  .trabajos-head {
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-20);
+  }
+
+  .trabajos-head-title {
+    gap: 12px;
+  }
+
+  .trabajos-filters {
+    display: none;
+  }
+
+  .trabajos-select {
+    display: block;
+    width: 100%;
+  }
+
+  .carousel-track {
+    gap: var(--space-md);
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    scroll-padding-left: var(--gutter);
+    scroll-padding-right: var(--gutter);
+  }
+
+  .work-card {
+    flex: 0 0 240px;
+    gap: 12px;
+  }
+
+  .work-name {
+    font-size: 20px;
+  }
+
+  .work-desc {
+    display: none;
+  }
+
+  .carousel-controls {
+    margin-top: var(--space-20);
+  }
+}

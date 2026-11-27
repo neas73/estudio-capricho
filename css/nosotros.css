@@ -1,0 +1,132 @@
+/* ==========================================================================
+   nosotros.css — "Quiénes somos": manifiesto, principios y equipo
+   ========================================================================== */
+
+.nosotros-inner {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.nosotros-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 56px 80px;
+  align-items: flex-start;
+}
+
+.nosotros-copy {
+  flex: 1 1 440px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-28);
+}
+
+.nosotros-text {
+  max-width: 540px;
+  color: var(--color-text-soft);
+}
+
+/* Resumen de principios: solo en celular */
+.values-summary {
+  display: none;
+}
+
+/* Principios */
+.values-list {
+  margin-top: 12px;
+  border-top: 1.5px solid var(--color-ink);
+}
+
+.value-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px var(--space-28);
+  padding: var(--space-20) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.value-title {
+  flex: 0 1 210px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.value-text {
+  flex: 1 1 220px;
+  min-width: 0;
+  font-size: 15px;
+  color: var(--color-text-soft);
+}
+
+/* Equipo */
+.team-grid {
+  flex: 1 1 400px;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-20);
+}
+
+.team-member {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.team-portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-art-stone);
+}
+
+.team-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+/* Celular: texto más corto y sin la línea que separa los principios de las fotos */
+@media (max-width: 640px) {
+  .nosotros-grid {
+    gap: var(--space-28);
+  }
+
+  .nosotros-copy {
+    gap: var(--space-20);
+  }
+
+  .values-list {
+    display: none;
+  }
+
+  .values-summary {
+    display: block;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.45;
+    color: var(--color-ink);
+  }
+
+  .team-grid {
+    gap: var(--space-md) var(--space-sm);
+  }
+
+  .team-name {
+    font-size: 16px;
+  }
+}

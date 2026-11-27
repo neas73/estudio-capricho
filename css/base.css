@@ -1,0 +1,247 @@
+/* ==========================================================================
+   base.css — variables, reset, tipografía global y utilidades compartidas
+   ========================================================================== */
+
+:root {
+  /* Colores de marca */
+  --color-accent: #84adc9;
+  --color-ink: #42261b;
+
+  /* Fondos */
+  --color-bg: #f6f3f0;
+  --color-bg-alt: #e6eef4;
+  --color-bg-glass: rgba(246, 243, 240, 0.92);
+  --color-white: #ffffff;
+  --color-surface-light: #f6f1ec;
+
+  /* Textos */
+  --color-text-soft: #52382e;
+  --color-text-muted: #6a5148;
+  --color-on-dark-soft: #e3d6cd;
+  --color-on-dark-muted: #cdbdb3;
+
+  /* Líneas y bordes */
+  --color-line: #d9cec6;
+  --color-line-dark: #6b4a3c;
+  --color-border-soft: #b9a99f;
+  --color-border-filter: #8f7b71;
+  --color-border-need: #9a8174;
+
+  /* Tonos de las ilustraciones provisorias */
+  --color-art-sky: #cfdfea;
+  --color-art-stone: #dcd3cc;
+  --color-art-sand: #ede6e0;
+
+  /* Tipografía */
+  --font-sans: 'Raleway', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Espaciado */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-28: 28px;
+  --space-48: 48px;
+
+  /* Radios */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+  --radius-round: 50%;
+
+  /* Layout */
+  --container-max: 1280px;
+  --gutter: clamp(20px, 5vw, 64px);
+  --section-pad-y: clamp(64px, 9vw, 120px);
+}
+
+/* Reset mínimo */
+html {
+  scroll-behavior: smooth;
+  /* Deja libre el alto del menú flotante al saltar a una sección */
+  scroll-padding-top: var(--header-height, 72px);
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  font-variant-numeric: lining-nums;
+  font-feature-settings: 'lnum' 1;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+dl,
+dt,
+dd,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Textos alternativos: versión completa en escritorio, resumida en celular */
+.only-mobile {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-pad-y: 48px;
+  }
+
+  .only-desktop {
+    display: none;
+  }
+
+  .only-mobile {
+    display: inline;
+  }
+
+  /* El texto escrito no se selecciona: solo se interactúa con botones y enlaces */
+  body {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+/* Contenedor central */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+/* Etiqueta pequeña sobre los títulos */
+.eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.eyebrow-strong {
+  color: var(--color-text-soft);
+}
+
+.eyebrow-on-dark {
+  color: var(--color-on-dark-muted);
+}
+
+/* Título de sección compartido (pilares, trabajos, nosotros) */
+.section-title {
+  font-weight: 500;
+  font-size: clamp(32px, 4.4vw, 60px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title-balance {
+  text-wrap: balance;
+}
+
+/* Detalle en Playfair Display cursiva */
+.accent-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Marcador azul bajo la palabra destacada */
+.highlight {
+  background: linear-gradient(
+    transparent 62%,
+    var(--color-accent) 62%,
+    var(--color-accent) 90%,
+    transparent 90%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding: 0 0.06em;
+}
+
+/* Enlace con subrayado azul al pasar el cursor */
+.link-hover {
+  transition: text-decoration-color 0.25s;
+}
+
+.link-hover:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+
+/* Botón base (las variantes viven en cada sección) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Botones tipo "chip" (filtros del portfolio y áreas de contacto) */
+.chip {
+  cursor: pointer;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Accesibilidad */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,141 @@
+/* ==========================================================================
+   pilares.css — sección "Cuatro pilares"
+   ========================================================================== */
+
+.pilares {
+  border-top: 1px solid var(--color-line);
+}
+
+.pilares-inner {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.pilares-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-24) var(--space-xl);
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.pilares-head-title {
+  flex: 1 1 420px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-20);
+}
+
+.pilares-intro {
+  flex: 1 1 300px;
+  max-width: 440px;
+  color: var(--color-text-soft);
+}
+
+.pilares-list {
+  border-top: 1.5px solid var(--color-ink);
+}
+
+.pilar-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-20) var(--space-48);
+  align-items: flex-start;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.pilar-head {
+  flex: 1 1 300px;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-20);
+}
+
+.pilar-icon {
+  flex: none;
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pilar-title {
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.pilar-row:hover .pilar-title {
+  transform: translateX(8px);
+}
+
+.pilar-text {
+  flex: 1.3 1 300px;
+  min-width: 0;
+  max-width: 480px;
+  color: var(--color-text-soft);
+}
+
+.pilar-tags {
+  flex: 1 1 220px;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.pilar-tag {
+  padding: 6px 14px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-soft);
+}
+
+/* Celular: lista compacta de pilares (ícono + título + una frase) */
+@media (max-width: 640px) {
+  .pilares-intro,
+  .pilar-tags {
+    display: none;
+  }
+
+  .pilares-head {
+    margin-bottom: var(--space-24);
+  }
+
+  .pilar-row {
+    gap: 10px;
+    padding: var(--space-20) 0;
+  }
+
+  .pilar-head {
+    flex-basis: 100%;
+    gap: var(--space-md);
+  }
+
+  .pilar-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pilar-title {
+    font-size: 24px;
+  }
+
+  .pilar-text {
+    flex-basis: 100%;
+    font-size: 15px;
+  }
+
+  .pilar-row:hover .pilar-title {
+    transform: none;
+  }
+}

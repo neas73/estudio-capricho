@@ -1,0 +1,52 @@
+/* ==========================================================================
+   footer.css — pie de página
+   ========================================================================== */
+
+.site-footer {
+  margin-top: clamp(56px, 8vw, 104px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-20) var(--space-lg);
+  padding-top: var(--space-28);
+  border-top: 1px solid var(--color-line-dark);
+}
+
+.footer-logo {
+  display: block;
+  height: 64px;
+  width: auto;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: var(--color-on-dark-muted);
+}
+
+.footer-top {
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-surface-light);
+}
+
+/* Celular: pie compacto, sin línea superior */
+@media (max-width: 640px) {
+  .site-footer {
+    margin-top: var(--space-20);
+    padding-top: 0;
+    border-top: 0;
+    gap: var(--space-sm) var(--space-md);
+  }
+
+  .footer-logo {
+    height: 48px;
+  }
+
+  .footer-copy {
+    order: 3;
+    flex-basis: 100%;
+    font-size: 13px;
+  }
+}
